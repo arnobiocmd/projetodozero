@@ -77,7 +77,7 @@
 			<h2 class="title">Especialidades</h2>
 			<div class="w33 left box-especialidades">
 				<h3><i class="fa fa-css3" aria-hidden="true"></i></h3>
-				<h3>CSS</h3>
+				<h4>CSS</h4>
 				<p>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
@@ -85,7 +85,7 @@
 			</div>
 			<div class="w33 left box-especialidades">
 				<h3><i class="fa fa-html5" aria-hidden="true"></i></h3>
-				<h3>HTML</h3>
+				<h4>HTML</h4>
 				<p>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
@@ -93,7 +93,7 @@
 			</div>
 			<div class="w33 left box-especialidades">
 				<h3><i class="fa fa-apple" aria-hidden="true"></i></h3>
-				<h3>APPLE</h3>
+				<h4>APPLE</h4>
 				<p>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
@@ -104,7 +104,7 @@
 	</section>
 	<section class="extras">
 		<div class="center">
-			<div class="left w50">
+			<div class="left w50 depoimento-container">
 			<h2 class="title">Depoimentos</h2>
 				<div class="depoimento-single">
 					<p class="depoimento-descricao">ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -134,10 +134,15 @@
 					<p class="nome-autor">Lorem ipson</p>
 				</div>
 			</div>
-			<div class=" left w50">
+			<div class=" left w50 servicos-container">
 			<h2 class="title">Serviços</h2>
 				<div class="servicos">
 					<ul>
+						<li>ipsum dolor sit amet, consectetur adipisicing elit, sed do 
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad 
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+						consequat. Duis aute irure dolor in reprehenderit in voluptate 
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
 						<li>ipsum dolor sit amet, consectetur adipisicing elit, sed do 
 						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad 
 						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
