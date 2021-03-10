@@ -26,6 +26,9 @@
 				</ul>
 			</nav>
 			<nav class="menu-mobile">
+				<div class="menu-btn">
+					<i class="fa fa-bars"></i>
+				</div>
 				<ul>
 					<li><a href="">Home</a></li>
 					<li><a href="">Sobre</a></li>
@@ -37,6 +40,7 @@
 		</div>
 	</header>
 	<section class="banner-principal">
+		<div class="overley"></div>
 		<div class="center">
 			<form>
 				<h2>Qual seu melhor e-mail?</h2>
@@ -48,6 +52,7 @@
 	<section class="descricao-autor">
 		<div class="center">
 			<div class="left w50">
+				<h2>Arnobio Paulino Fernandes</h2>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -62,7 +67,7 @@
 				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 			</div>
 			<div class="left w50">
-				<img src="assets/img/imgava.jpg">
+				<img class="right" src="assets/img/imgava.jpg">
 			</div>
 			<div class="clear"></div>
 		</div>

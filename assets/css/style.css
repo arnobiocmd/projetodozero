@@ -5,6 +5,11 @@
 	font-family: 'Open Sans', sans-serif;
 
 }
+
+img{
+	width: 85%;
+
+}
 .clear{
 	clear: both;
 }
@@ -17,6 +22,7 @@
 }
 .w50{
 	width: 50%;
+	padding: 0 10px;
 
 }
 .w33{
@@ -49,9 +55,41 @@ header{
 .menu-desktop{
 	float: right;
 }
+.menu-btn{
+	color: white;
+	font-size: 26px;
+	cursor: pointer;
+
+}
 .menu-mobile{
 	float: right;
 	display: none;
+}
+.menu-mobile ul{
+	display: none;
+	width: 100%;
+	z-index: 3;
+	text-align: center;
+	position: absolute;
+	top: 68px;
+	left: 0;
+	background-color: #566ea3;
+}
+
+.menu-mobile li{
+	padding: 8px 0;
+	border-bottom: 1px solid #999;
+}
+.menu-mobile li:hover{
+	background-color: rgba(999,999,999,0.1);
+}
+.menu-mobile a{
+	color: white;
+	font-size: 18px;
+	text-transform: uppercase;
+	text-decoration: none;
+	display: block;
+	font-weight: 300;
 }
 
 .menu-desktop li{
@@ -66,4 +104,99 @@ header{
 	text-transform: uppercase;
 	font-weight: 300;
 	
+}
+
+.banner-principal{
+	width: 100%;
+	height: 600px;
+	position: relative;
+	background-image: url('../img/form1.jpg');
+	background-size: cover;
+	background-position: center;
+}
+.overley{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.3);
+	z-index: 1;
+}
+
+.banner-principal form{
+	width: 100%;
+	max-width: 450px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 2;
+}
+
+.banner-principal form h2{
+	color: white;
+	font-size: 32px;
+	text-align: center;
+	font-weight: 400;
+	margin-bottom:  10px;
+}
+
+.banner-principal form input[type="email"]{
+	width: 98%;
+	height: 50px;
+	padding-left: 8px;
+	font-size: 17px;
+}
+.banner-principal form input[type="submit"]{
+	width: 98%;
+	height: 50px;
+	margin-top:15px;
+	cursor: pointer;
+	font-size: 24px;
+	background-color: #107AB0;
+	border: 0;
+	color: white;
+	line-height: 50px;
+}
+
+.descricao-autor{
+	padding: 30px 0;
+}
+.descricao-autor h2{
+	font-size: 26px;
+	margin-bottom: 8px;
+	font-weight: 400;
+}
+.descricao-autor p{
+	margin-bottom: 10px;
+	font-size: 17px;
+	color: #555;
+}
+
+
+
+
+@media screen and (max-width: 768px){
+	.w50{
+		padding: 20px;
+		width: 100%;
+	}
+	img{
+		display:block;
+		margin: 0 auto;
+		float: none !important;
+	}
+
+	.menu-desktop{
+		display: none;
+	}
+	.menu-mobile{
+		display: block;
+	}
+
+	.logo{
+		padding: 4px;
+	}
+
 }
