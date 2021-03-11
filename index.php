@@ -1,10 +1,11 @@
+<?php include('config.php');?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Projeto 01</title>
 	  <meta charset="UTF-8">
-	  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	  <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+	  <link rel="stylesheet" type="text/css" href="<?php echo INCLUDE_PATH?>assets/css/style.css">
+	  <link rel="stylesheet" type="text/css" href="<?php echo INCLUDE_PATH?>assets/css/font-awesome.min.css">
 	  <meta name="description" content="Site de teste">
 	  <meta name="keywords" content="palavras,chaves">
 	  <meta name="author" content="Arnobio">
@@ -19,10 +20,10 @@
 			<div class="logo"><a href="./">LOGOMARCA</a></div>
 			<nav class="menu-desktop">
 				<ul>
-					<li><a href="">Home</a></li>
-					<li><a href="">Sobre</a></li>
-					<li><a href="">Serviços</a></li>
-					<li><a href="">Contato</a></li>
+					<li><a href="<?php echo INCLUDE_PATH?>">Home</a></li>
+					<li><a href="<?php echo INCLUDE_PATH?>sobre">Sobre</a></li>
+					<li><a href="<?php echo INCLUDE_PATH?>servicos">Serviços</a></li>
+					<li><a href="<?php echo INCLUDE_PATH?>contato">Contato</a></li>
 				</ul>
 			</nav>
 			<nav class="menu-mobile">
@@ -30,145 +31,34 @@
 					<i class="fa fa-bars"></i>
 				</div>
 				<ul>
-					<li><a href="">Home</a></li>
-					<li><a href="">Sobre</a></li>
-					<li><a href="">Serviços</a></li>
-					<li><a href="">Contato</a></li>
+					<li><a href="<?php echo INCLUDE_PATH?>">Home</a></li>
+					<li><a href="<?php echo INCLUDE_PATH?>sobre">Sobre</a></li>
+					<li><a href="<?php echo INCLUDE_PATH?>servicos">Serviços</a></li>
+					<li><a href="<?php echo INCLUDE_PATH?>contato">Contato</a></li>
 				</ul>
 			</nav>
 			<div class="clear"></div>
 		</div>
 	</header>
-	<section class="banner-principal">
-		<div class="overley"></div>
+
+	<?php
+	$url = isset($_GET['url']) ? $_GET['url'] : 'home';
+	if(file_exists('pages/'.$url.'.php')){
+		include('pages/'.$url.'.php');
+	}else{
+		$pagina404 = true;
+		include('pages/erro404.php');
+	}
+
+	?>
+	
+	<footer <?php if(isset($pagina404) && $pagina404 == true) echo 'class="fixed"'?>>
 		<div class="center">
-			<form>
-				<h2>Qual seu melhor e-mail?</h2>
-				<input type="email" name="email">
-				<input type="submit" name="acao" value="Cadastrar!">
-			</form>
-		</div>
-	</section>
-	<section class="descricao-autor">
-		<div class="center">
-			<div class="left w50">
-				<h2>Arnobio Paulino Fernandes</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			</div>
-			<div class="left w50">
-				<img class="right" src="assets/img/imgava.jpg">
-			</div>
-			<div class="clear"></div>
-		</div>
-	</section>
-	<section class="especialidas">
-		<div class="center">
-			<h2 class="title">Especialidades</h2>
-			<div class="w33 left box-especialidades">
-				<h3><i class="fa fa-css3" aria-hidden="true"></i></h3>
-				<h4>CSS</h4>
-				<p>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-			</div>
-			<div class="w33 left box-especialidades">
-				<h3><i class="fa fa-html5" aria-hidden="true"></i></h3>
-				<h4>HTML</h4>
-				<p>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-			</div>
-			<div class="w33 left box-especialidades">
-				<h3><i class="fa fa-apple" aria-hidden="true"></i></h3>
-				<h4>APPLE</h4>
-				<p>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-			</div>
-			<div class="clear"></div>
-		</div>
-	</section>
-	<section class="extras">
-		<div class="center">
-			<div class="left w50 depoimento-container">
-			<h2 class="title">Depoimentos</h2>
-				<div class="depoimento-single">
-					<p class="depoimento-descricao">ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit 
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
-					</p>
-					<p class="nome-autor">Lorem ipson</p>
-				</div>
-				<div class="depoimento-single">
-					<p class="depoimento-descricao">ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit 
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
-					</p>
-					<p class="nome-autor">Lorem ipson</p>
-				</div>
-				<div class="depoimento-single">
-					<p class="depoimento-descricao">ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit 
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
-					</p>
-					<p class="nome-autor">Lorem ipson</p>
-				</div>
-			</div>
-			<div class=" left w50 servicos-container">
-			<h2 class="title">Serviços</h2>
-				<div class="servicos">
-					<ul>
-						<li>ipsum dolor sit amet, consectetur adipisicing elit, sed do 
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad 
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-						consequat. Duis aute irure dolor in reprehenderit in voluptate 
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
-						<li>ipsum dolor sit amet, consectetur adipisicing elit, sed do 
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad 
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-						consequat. Duis aute irure dolor in reprehenderit in voluptate 
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
-						<li>ipsum dolor sit amet, consectetur adipisicing elit, sed do 
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad 
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-						consequat. Duis aute irure dolor in reprehenderit in voluptate 
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
-						<li>ipsum dolor sit amet, consectetur adipisicing elit, sed do 
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad 
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-						consequat. Duis aute irure dolor in reprehenderit in voluptate 
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
-					</ul>
-				</div>
-				
-			</div>
-			<div class="clear"></div>
-		</div>
-	</section>
-	<footer>
-		<div class="center">
-			<p>Todos os direitos resevados</p>
+			<p>Todos os direitos reservados</p>
 		</div>
 	</footer>
+
+	<script type="text/javascript" src="<?php echo INCLUDE_PATH?>assets/js/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="<?php echo INCLUDE_PATH?>assets/js/script.js"></script>
 </body>
 </html>
