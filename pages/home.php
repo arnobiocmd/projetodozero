@@ -1,5 +1,12 @@
 <section class="banner-principal">
+		<div style="background-image: url('assets/img/form1.jpg');" class="banner-principal-single"></div>
+		<div style="background-image: url('assets/img/form2.jpg');" class="banner-principal-single"></div>
+		<div style="background-image: url('assets/img/form3.jpg');" class="banner-principal-single"></div>
+		<div style="background-image: url('assets/img/form4.jpg');" class="banner-principal-single"></div>
 		<div class="overley"></div>
+		<div class="bollets">
+			
+		</div>
 		<div class="center">
 			<form>
 				<h2>Qual seu melhor e-mail?</h2>
@@ -31,7 +38,7 @@
 			<div class="clear"></div>
 		</div>
 	</section>
-	<section class="especialidas">
+	<section id="sobre" class="especialidas">
 		<div class="center">
 			<h2 class="title">Especialidades</h2>
 			<div class="w33 left box-especialidades">
@@ -61,7 +68,7 @@
 			<div class="clear"></div>
 		</div>
 	</section>
-	<section class="extras">
+	<section id="servicos" class="extras">
 		<div class="center">
 			<div class="left w50 depoimento-container">
 			<h2 class="title">Depoimentos</h2>

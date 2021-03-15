@@ -116,10 +116,41 @@ header{
 	width: 100%;
 	height: 600px;
 	position: relative;
-	background-image: url('../img/form1.jpg');
+	
+
+	
+}
+
+.banner-principal-single{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
 }
+.bollets{
+	position: absolute;
+	z-index: 5;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 10px;
+}
+.bollets span{
+	cursor: pointer;
+	margin: 0 4px;
+	display: inline-block;
+	width: 22px;
+	height: 22px;
+	border-radius: 50%;
+	background-color: #728639;
+}
+.bollets span.select-bollets{
+	background-color: white;
+}
+
 .overley{
 	position: absolute;
 	left: 0;
@@ -302,7 +333,49 @@ footer p{
 	width: 100%;
 }
 
+#map{
+	width: 100%;
+	height: 380px;
+}
 
+.contato{
+	padding: 30px 0;
+}
+.contato input[type="text"],.contato input[type="email"]{
+	width: 98%;
+	max-width: 600px;
+	display: block;
+	height: 40px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	padding-left: 8px;
+	border: 1px solid #555;
+	font-size: 17px;
+}
+.contato textarea{
+	width: 98%;
+	max-width: 600px;
+	height: 120px;
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	padding: 8px;
+	border: 1px solid #555;
+	font-size: 17px;
+}
+.contato input[type="submit"]{
+	width: 120px;
+	max-width: 600px;
+	display: block;
+	height: 40px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	background-color:#475F94; 
+	font-size: 22px;
+	border: 0;
+	color: white;
+	cursor: pointer;
+}
 
 
 
