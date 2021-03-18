@@ -38,7 +38,7 @@ $(function(){
 
 		})
 	}
-	carregaDinamico();	
+	//carregaDinamico();	
 	function carregaDinamico(){
 		var atual = - 1;
 		var maximo = $('.box-especialidades').length - 1;
@@ -56,10 +56,6 @@ $(function(){
 
 		$('.box-especialidades').eq(atual).fadeIn(1000);	
 		}
-
-
-			
-		
 
 		
 	}

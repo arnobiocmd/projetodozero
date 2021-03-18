@@ -8,9 +8,12 @@
 			
 		</div>
 		<div class="center">
-			<form>
+			
+
+			<form method="POST">
 				<h2>Qual seu melhor e-mail?</h2>
 				<input type="email" name="email">
+				<input type="hidden" name="identificador" value="form_home">
 				<input type="submit" name="acao" value="Cadastrar!">
 			</form>
 		</div>

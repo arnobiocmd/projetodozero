@@ -130,6 +130,7 @@ header{
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
+	display: none;
 }
 .bollets{
 	position: absolute;
@@ -376,6 +377,66 @@ footer p{
 	color: white;
 	cursor: pointer;
 }
+
+
+.loader-ajax{
+	display: none;
+	position: fixed;
+	background-color: rgba(0,0,0,0.4);
+	width: 100%;
+	height: 100%;
+	z-index: 999;
+}
+
+.loader-ajax img{
+	width: 45px;
+	height: 45px;
+	position: relative;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.erro{
+	z-index: 9999;
+	display: none;
+	width: 500px;
+	padding: 10px;
+	background-color: #FA4224;
+	text-align: center;
+	color: white;
+	font-weight: bold;
+	font-size: 27px;
+	position: fixed;
+	top: 200px;
+	left: 50%;
+	transform: translateX(-50%);	
+	
+}
+
+
+.sucesso{
+	display: none;
+	z-index:9999;
+	width: 500px;
+	padding: 10px;
+	background-color: #728639;
+	text-align: center;
+	color: white;
+	font-weight: bold;
+	font-size: 27px;
+	position: fixed;
+	top: 200px;
+	left: 50%;
+	transform: translateX(-50%);	
+	
+}
+	
+
+
+
+
+
 
 
 
