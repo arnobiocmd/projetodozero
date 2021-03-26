@@ -68,7 +68,7 @@ body{
 	background-color: #107AB0;
 	color: white;
 	border: 0;
-	cursor: pointer;#168fcc
+	cursor: pointer;
 }
 
 .box-login input[type="submit"]:hover{
@@ -128,7 +128,14 @@ header{
 .box-content{
 	padding:10px;
 	background-color: white;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
+
+}
+
+.box-content h2{
+	font-weight: 400;
+	color: #02066F;
+	padding: 10px;
 
 }
 
@@ -136,6 +143,7 @@ header{
 	float: right;
 }
 .loggout a{
+	padding: 15px;
 	color: white;
 	font-size: 21px;
 	text-decoration: none;
@@ -254,6 +262,184 @@ header{
 	font-weight: 400;
 	font-size: 18px;
 }
+.tabela-response{
+	padding: 30px;
+}
+
+.col{
+	width: 50%;
+	float: left;
+}
+.row{
+	border-bottom:  1px solid #555;
+	padding: 8px;
+}
+.row:nth-of-type(1){
+	font-size: 20px;
+	background-color: #08787F;
+	padding: 8px;
+	color: white;
+	font-weight: 400;
+}
+
+.box-content form{
+	padding: 25px 1%;
+}
+
+form .box-form{
+	margin-bottom:  20px;
+}
+
+.box-content label{
+	font-size: 19px;
+
+}
+.box-form input[type="text"],.box-form input[type="password"]{
+	width: 100%;
+	padding-left: 8px;
+	height: 40px;
+	font-size: 18px;
+	margin-top: 5px;	
+}
+
+.box-form select{
+	width: 100%;
+	padding-left: 8px;
+	height: 40px;
+	font-size: 18px;
+	margin-top: 5px;	
+}
+
+.box-form  textarea{
+	width: 100%;
+	padding: 8px;
+	height: 120px;
+	font-size: 18px;
+	margin-top: 5px;
+	resize: vertical;	
+}
+.box-form input[type="file"]{
+	width: 100%;
+	padding: 5px;
+	font-size: 18px;
+	margin-top: 5px;
+	border: 1px solid #555;
+
+}
+.box-form input[type="submit"]{
+	width: 110px;
+	height: 40px;
+	font-size: 21px;
+	margin-top: 8px;
+	background-color: #107AB0;
+	color: white;
+	border: 0;
+	cursor: pointer;
+}
+.box-form input[type="submit"]:hover{
+	background-color: #168fcc;
+	
+}
+
+.box-alert{
+	text-align: center;
+	padding:6px;
+	font-size: 24px;
+	color: white;
+}
+.sucesso{
+	background-color: #728639;
+}
+.erro{
+	background-color: #BB3F3F;
+}
+
+.menu-active{
+	background-color: rgba(999,999,999,0.3);
+}
+
+.menu-active::before{
+	
+  content: ' >> ';
+ 
+}
+
+
+form .box-login-check:nth-of-type(2){
+	font-size: 17px;
+	position: relative;
+	top: 14px;
+	
+}
+form .box-login-check input[type="checkbox"]{
+	position: relative;
+	top: 2px;
+}
+
+
+table {
+	min-width: 900px;
+	width: 100%;
+	margin: 20px 0;
+	border-collapse: collapse;
+	
+}
+table tr:nth-of-type(1){
+	padding: 30px;
+	background-color: #6D5ACF;
+	color: white;
+	font-size: 22px;
+	
+
+
+}
+table td{
+		padding: 8px;
+}
+table tr{
+	border-bottom: 1px solid #ccc;
+
+}
+
+a.btn{
+	display: inline-block;
+	padding: 5px 5px;
+	text-decoration: none;
+	color: white;
+	font-size: 18px;
+}
+
+a.edit{
+	background-color: #247AFD;
+}
+
+a.delete{
+	background-color: #FA4224;
+}
+
+a.order{
+	background-color: #247AFD;
+}
+.wraper-table{
+	overflow-x: auto;
+}
+
+.paginacao{
+	padding: 10px;
+	text-align: center;
+}
+.paginacao a{
+	text-decoration: none;
+	display: inline-block;
+	padding: 4px 6px;
+	border: 1px solid #555;
+	margin: 3px;
+}
+a.page-select{
+	background-color: #ccc;
+}
+
+
 
 
 @media screen and (max-width: 768px){
@@ -271,6 +457,7 @@ header{
 	.content{
 		width: 100%;
 		left: 0;
+		
 	}
 	.box-metricas-single{
 		width: 100%;

@@ -1,5 +1,7 @@
 <?php
 	session_start();
+
+	date_default_timezone_set('America/Sao_Paulo');
 	$autoload = function($class){
 		if($class == 'Email'){
 			require_once('classes/phpmailer/PHPMailerAutoload.php');
@@ -11,6 +13,7 @@
 
 	define('INCLUDE_PATH', 'http://localhost/dozeronovo/');
 	define('INCLUDE_PATH_PAINEL', INCLUDE_PATH.'painel/');
+	define('BASE_DIR_PAINEL',__DIR__.'/painel');
 
 	/*Conecção com Banco de dados*/
 
@@ -23,14 +26,33 @@
 
 	/*Funçoes do sistema*/
 
-	function pegarCargo($cargo){
-		$arr = [
-			'0'=>'Normal',
-			'1'=>'Sub Administrador',
-			'2'=>'Administrador'
-		];
+	function pegarCargo($indice){
 
-		return $arr[$cargo];
-
+		return Painel::$cargos[$indice];
 		
+	}
+	function selecinaMenu($par){
+		$url = explode('/', @$_GET['url'])[0];
+		if($url == $par){
+			echo 'class="menu-active"';
+
+		}
+	}
+
+	function verificarPermissaoMenu($permissao){
+		if($_SESSION['cargo'] >= $permissao){
+			return;
+		}else{
+			echo "style=display:none";
+		}
+
+	}
+
+	function verificarPermissaoPagina($permissao){
+		if($_SESSION['cargo'] >= $permissao){
+			return;
+		}else{
+			include('painel/pages/permissao-negada.php');
+			die();
+		}
 	}

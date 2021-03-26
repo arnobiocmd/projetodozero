@@ -1,8 +1,17 @@
+
 <?php include('config.php');?>
+<?php Site::carregarUsuariosOline();?>
+<?php Site::contador()?>
+
+<?php
+	$sql = MySql::conectar()->prepare("SELECT * FROM pro_admin_config");
+	$sql->execute();
+	$infoSite = $sql->fetch();
+?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Projeto 01</title>
+	<title><?php echo $infoSite['titulo']?></title>
 	  <meta charset="UTF-8">
 	  <link rel="stylesheet" type="text/css" href="<?php echo INCLUDE_PATH?>assets/css/style.css">
 	  <link rel="stylesheet" type="text/css" href="<?php echo INCLUDE_PATH?>assets/css/font-awesome.min.css">
@@ -15,7 +24,6 @@
 	  <link rel="icon" href="<?php echo INCLUDE_PATH ?>favicon.ico" type="image/x-icon">
 </head>
 <body>
-
 	
 	<?php
 	/*

@@ -1,8 +1,16 @@
+
 <section class="banner-principal">
-		<div style="background-image: url('assets/img/form1.jpg');" class="banner-principal-single"></div>
-		<div style="background-image: url('assets/img/form2.jpg');" class="banner-principal-single"></div>
-		<div style="background-image: url('assets/img/form3.jpg');" class="banner-principal-single"></div>
-		<div style="background-image: url('assets/img/form4.jpg');" class="banner-principal-single"></div>
+	<?php
+		$sql = MySql::conectar()->prepare("SELECT * FROM pro_admin_slides ORDER BY order_id ASC LIMIT 4");
+		$sql->execute();
+		$slides = $sql->fetchAll();
+		foreach ($slides as $key => $value) {
+		
+	?>
+		<div style="background-image: url('<?php echo INCLUDE_PATH_PAINEL?>uploads/<?php echo $value['slide']?>');" class="banner-principal-single"></div>
+	
+
+	<?php }?>
 		<div class="overley"></div>
 		<div class="bollets">
 			
@@ -21,19 +29,8 @@
 	<section class="descricao-autor">
 		<div class="center">
 			<div class="left w50">
-				<h2>Arnobio Paulino Fernandes</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<h2><?php echo $infoSite['nome_autor']?></h2>
+				<p><?php echo $infoSite['descricao_autor']?>.</p>
 			</div>
 			<div class="left w50">
 				<img class="right" src="<?php echo INCLUDE_PATH?>assets/img/imgava.jpg">
@@ -45,28 +42,19 @@
 		<div class="center">
 			<h2 class="title">Especialidades</h2>
 			<div class="w33 left box-especialidades">
-				<h3><i class="fa fa-css3" aria-hidden="true"></i></h3>
+				<h3><i class="<?php echo $infoSite['icone1']?>" aria-hidden="true"></i></h3>
 				<h4>CSS</h4>
-				<p>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+				<p><?php echo $infoSite['descricao_icone1']?></p>
 			</div>
 			<div class="w33 left box-especialidades">
-				<h3><i class="fa fa-html5" aria-hidden="true"></i></h3>
+				<h3><i class="<?php echo $infoSite['icone2']?>" aria-hidden="true"></i></h3>
 				<h4>HTML</h4>
-				<p>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+				<p><?php echo $infoSite['descricao_icone2']?></p>
 			</div>
 			<div class="w33 left box-especialidades">
-				<h3><i class="fa fa-apple" aria-hidden="true"></i></h3>
+				<h3><i class="<?php echo $infoSite['icone3']?>" aria-hidden="true"></i></h3>
 				<h4>APPLE</h4>
-				<p>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+				<p><?php echo $infoSite['descricao_icone3']?></p>
 			</div>
 			<div class="clear"></div>
 		</div>
@@ -75,59 +63,37 @@
 		<div class="center">
 			<div class="left w50 depoimento-container">
 			<h2 class="title">Depoimentos</h2>
+			<?php
+			$sql = MySql::conectar()->prepare("SELECT * FROM pro_admin_depoimentos ORDER BY order_id ASC LIMIT 3");
+			$sql->execute();
+			$depoimentoSite = $sql->fetchAll();
+				foreach ($depoimentoSite as $key => $value) {	
+			?>
 				<div class="depoimento-single">
-					<p class="depoimento-descricao">ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit 
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
+					<p class="depoimento-descricao"> <?php echo $value['depoimento']?>
 					</p>
-					<p class="nome-autor">Lorem ipson</p>
+					<p class="nome-autor"><?php echo $value['nome']?> - <?php echo $value['data']?> </p>
 				</div>
-				<div class="depoimento-single">
-					<p class="depoimento-descricao">ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit 
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
-					</p>
-					<p class="nome-autor">Lorem ipson</p>
-				</div>
-				<div class="depoimento-single">
-					<p class="depoimento-descricao">ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit 
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
-					</p>
-					<p class="nome-autor">Lorem ipson</p>
-				</div>
+				
+			<?php }?>
+				
 			</div>
 			<div class=" left w50 servicos-container">
 			<h2 class="title">Serviços</h2>
 				<div class="servicos">
+					<?php 
+						$sql = MySql::conectar()->prepare("SELECT * FROM pro_admin_servicos ORDER BY order_id ASC LIMIT 3");
+						$sql ->execute();
+						$servicos = $sql->fetchAll();
+							foreach ($servicos as $key => $value) {
+						
+					?>
 					<ul>
-						<li>ipsum dolor sit amet, consectetur adipisicing elit, sed do 
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad 
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-						consequat. Duis aute irure dolor in reprehenderit in voluptate 
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
-						<li>ipsum dolor sit amet, consectetur adipisicing elit, sed do 
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad 
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-						consequat. Duis aute irure dolor in reprehenderit in voluptate 
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
-						<li>ipsum dolor sit amet, consectetur adipisicing elit, sed do 
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad 
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-						consequat. Duis aute irure dolor in reprehenderit in voluptate 
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
-						<li>ipsum dolor sit amet, consectetur adipisicing elit, sed do 
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad 
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-						consequat. Duis aute irure dolor in reprehenderit in voluptate 
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
-					</ul>
+						<li><?php echo $value['servico']?></li>
+					
+						</ul>
+				
+				<?php }?>
 				</div>
 				
 			</div>

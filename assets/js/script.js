@@ -33,6 +33,7 @@ $(function(){
 			addMarker(-11.883488,-55.479697,'',"Minha casa",undefined,false);
 			},1000);
 			$('.principal').fadeIn(1000);
+			window.history.pushState('','',pagina);
 			return false;
 
 

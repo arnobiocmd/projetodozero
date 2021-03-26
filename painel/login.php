@@ -1,4 +1,23 @@
+<?php
+	if(isset($_COOKIE['lembrar'])){
+		$user = $_COOKIE['user'];
+		$password = $_COOKIE['password'];
+		$sql = MySql::conectar()->prepare("SELECT * FROM pro_admin_usuario WHERE user = ? AND password = ?");
+				$sql->execute(array($user,$password));
+			if($sql->rowCount() > 0){
+				$info = $sql->fetch();
+					$_SESSION['logged'] = true;
+					$_SESSION['user'] = $user;
+					$_SESSION['password'] = $password;
+					$_SESSION['img'] = $info['img'];
+					$_SESSION['nome'] = $info['nome'];
+					$_SESSION['cargo'] = $info['cargo'];
+					header('Location: '.INCLUDE_PATH_PAINEL);
+					die();
 
+			}
+	}
+?>
 
 <!DOCTYPE html>
 <html>
@@ -28,6 +47,12 @@
 							$_SESSION['img'] = $info['img'];
 							$_SESSION['nome'] = $info['nome'];
 							$_SESSION['cargo'] = $info['cargo'];
+								if(isset($_POST['lembrar'])){
+									setcookie('lembrar',true,time() + (60*60*24) ,'/');
+									setcookie('user',$user, time()+ (60*60*24) , '/');
+									setcookie('password',$password, time() + (60*60*24), '/');
+								}
+							
 							
 							header('Location: '.INCLUDE_PATH_PAINEL);
 							die();
@@ -44,7 +69,14 @@
 		<form method="POST">
 			<input type="text" name="user" placeholder="Login..." required >
 			<input type="password" name="password" placeholder="Senha..." required >
-			<input type="submit" name="acao" value="Entrar">
+			<div class="box-login-check left">
+				<input type="submit" name="acao" value="Entrar">
+			</div>
+			<div class="box-login-check rigth">
+				<label>Lembrar-me</label>
+				<input type="checkbox" name="lembrar">
+			</div>
+			
 		</form>
 		
 	</div>

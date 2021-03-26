@@ -40,12 +40,24 @@ $(function(){
 				$('.content,header').css('width','100%').css('left','0');
 				open = false;
 			}else{
-				open = true;
+				
 				$('.content,header').css('width','calc(100% - 300px)').css('left','300px');
 				$('.menu').css('width','300px');
-				
+				open = true;
 			}
 		})
+
+		$('[actionBtn=confirme]').click(function(){
+			var txt = confirm("Deseja Realmente Excluir o Registro?")
+			if(txt  == true){
+				return true;
+			}else{
+				return false;
+			}
+		})
+
+
+	$('[formato=data]').mask('99/99/9999');
 
 
 })
