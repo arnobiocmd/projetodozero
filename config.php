@@ -56,3 +56,9 @@
 			die();
 		}
 	}
+
+	function recoverPost($post){
+		if(isset($_POST[$post])){
+			echo $_POST[$post];
+		}
+	}

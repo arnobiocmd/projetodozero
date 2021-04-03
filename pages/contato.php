@@ -1,6 +1,6 @@
 <div id="map"></div>
 <div class="contato">
-	<form method="POST">
+	<form class="ajax-form" method="POST">
 		<input type="text" name="nome" placeholder="Nome...">
 		<input type="email" name="email" placeholder="E-mail...">
 		<input type="text" name="telefone" placeholder="Telefone...">

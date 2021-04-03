@@ -40,15 +40,22 @@
 				<a <?php selecinaMenu('cadastrar-depomento')?> href="<?php echo INCLUDE_PATH_PAINEL?>cadastrar-depomento">Cadastrar Depoimento</a>
 				<a <?php selecinaMenu('cadastrar-servicos')?> href="<?php echo INCLUDE_PATH_PAINEL?>cadastrar-servicos">Cadastrar Serviço</a>
 				<a <?php selecinaMenu('cadastrar-slide')?> href="<?php echo INCLUDE_PATH_PAINEL?>cadastrar-slide">Cadastrar Slides</a>
+				<a <?php selecinaMenu('cadastrar-produtos')?> href="<?php echo INCLUDE_PATH_PAINEL?>cadastrar-produtos">Cadastrar Produtos</a>
 				<h2>Gestão</h2>
 				<a <?php selecinaMenu('lista-depoimentos')?> href="<?php echo INCLUDE_PATH_PAINEL?>lista-depoimentos">Listar Depoimento</a>
 				<a <?php selecinaMenu('lista-servicos')?> href="<?php echo INCLUDE_PATH_PAINEL?>lista-servicos">Listar Serviço</a>
 				<a <?php selecinaMenu('lista-slide')?> href="<?php echo INCLUDE_PATH_PAINEL?>lista-slide">Listar Slides</a>
+				<a <?php selecinaMenu('lista-produtos')?> href="<?php echo INCLUDE_PATH_PAINEL?>lista-produtos">Listar Produtos</a>
 				<h2>Administração do Painel</h2>
 				<a <?php selecinaMenu('editar-usuario')?> href="<?php echo INCLUDE_PATH_PAINEL?>editar-usuario">Editar Usuário</a>
 				<a <?php selecinaMenu('adicionar-usuario')?> <?php verificarPermissaoMenu(2)?> href="<?php echo INCLUDE_PATH_PAINEL?>adicionar-usuario">Adicionar Usuário</a>
 				<h2>Configuração Gegal</h2>
 				<a <?php selecinaMenu('editar-site')?> href="<?php echo INCLUDE_PATH_PAINEL?>editar-site">Editar Site</a>
+				<h2>Gestão de Notícias</h2>
+				<a <?php selecinaMenu('cadastrar-categorias')?> href="<?php echo INCLUDE_PATH_PAINEL?>cadastrar-categorias">Cadastrar Categorias</a>
+				<a <?php selecinaMenu('gerenciar-categorias')?> href="<?php echo INCLUDE_PATH_PAINEL?>gerenciar-categorias">Gerenciar Categorias</a>
+				<a <?php selecinaMenu('cadastrar-noticias')?> href="<?php echo INCLUDE_PATH_PAINEL?>cadastrar-noticias">Cadastrar Notícias</a>
+				<a <?php selecinaMenu('gerenciar-noticias')?> href="<?php echo INCLUDE_PATH_PAINEL?>gerenciar-noticias">Gerenciar Notícias</a>
 			</div>
 		</div>
 	</div>
@@ -78,5 +85,13 @@
 	<script type="text/javascript" src="<?php echo INCLUDE_PATH?>assets/js/jquery-3.6.0.min.js"></script>
 	<script type="text/javascript" src="<?php echo INCLUDE_PATH_PAINEL?>assets/js/jquery.mask.js"></script>
 	<script type="text/javascript" src="<?php echo INCLUDE_PATH_PAINEL?>assets/js/main.js"></script>
+	<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+  	<script>
+  	tinymce.init({
+  	selector:'.tinymce',
+  	plugins:'image',
+  
+  	toolbar: 'image',	
+  	});</script>
 </body>
 </html>

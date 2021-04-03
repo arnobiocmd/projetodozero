@@ -18,7 +18,7 @@
 		<div class="center">
 			
 
-			<form method="POST">
+			<form class="ajax-form" method="POST">
 				<h2>Qual seu melhor e-mail?</h2>
 				<input type="email" name="email">
 				<input type="hidden" name="identificador" value="form_home">
@@ -28,13 +28,11 @@
 	</section>
 	<section class="descricao-autor">
 		<div class="center">
-			<div class="left w50">
-				<h2><?php echo $infoSite['nome_autor']?></h2>
+			<div class="left w100">
+				<h2 class="text-center"><img src="<?php echo INCLUDE_PATH?>assets/img/imgava.jpg"><?php echo $infoSite['nome_autor']?></h2>
 				<p><?php echo $infoSite['descricao_autor']?>.</p>
 			</div>
-			<div class="left w50">
-				<img class="right" src="<?php echo INCLUDE_PATH?>assets/img/imgava.jpg">
-			</div>
+			
 			<div class="clear"></div>
 		</div>
 	</section>
@@ -59,6 +57,39 @@
 			<div class="clear"></div>
 		</div>
 	</section>
+
+
+
+
+	<section class="produtos">
+		<div class="center">
+			<h2 class="title">Promoção da semana</h2>
+
+			<?php
+			$sql = MySql::conectar()->prepare("SELECT * FROM pro_admin_produtos ORDER BY order_id ASC LIMIT 3 ");
+			$sql->execute();
+			$produtos = $sql->fetchAll();
+
+			foreach ($produtos as $key => $value) {
+			
+			
+			?>
+
+			<div class="w33 left box-produtos">
+				<div style="background-image: url('<?php echo INCLUDE_PATH_PAINEL?>uploads/<?php echo $value['foto_produto']?>');" class="box-produtos-imagem">
+					
+				</div>
+				<p><?php echo $value['descricao_produto']?></p>
+				<p>Valor R$ <?php echo $value['valor']?></p>
+			</div>
+
+			<?php }?>
+			
+			<div class="clear"></div>
+		</div>
+	</section>
+
+
 	<section id="servicos" class="extras">
 		<div class="center">
 			<div class="left w50 depoimento-container">

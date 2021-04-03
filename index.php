@@ -16,8 +16,8 @@
 	  <link rel="stylesheet" type="text/css" href="<?php echo INCLUDE_PATH?>assets/css/style.css">
 	  <link rel="stylesheet" type="text/css" href="<?php echo INCLUDE_PATH?>assets/css/font-awesome.min.css">
 	  <meta name="description" content="Site de teste">
-	  <meta name="keywords" content="palavras,chaves">
-	  <meta name="author" content="Arnobio">
+	  <meta name="keywords" content="sistema web">
+	  <meta name="author" content="Arnobio Paulino Fernandes">
 	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	  <link rel="preconnect" href="https://fonts.gstatic.com">
 	  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
@@ -102,10 +102,11 @@
 			<div class="logo"><a href="./">LOGOMARCA</a></div>
 			<nav class="menu-desktop">
 				<ul>
-					<li><a href="<?php echo INCLUDE_PATH?>">Home</a></li>
-					<li><a href="<?php echo INCLUDE_PATH?>sobre">Sobre</a></li>
-					<li><a href="<?php echo INCLUDE_PATH?>servicos">Serviços</a></li>
-					<li><a realtime="contato" href="<?php echo INCLUDE_PATH?>contato">Contato</a></li>
+					<li><a title="home" href="<?php echo INCLUDE_PATH?>">Home</a></li>
+					<li><a title="sobre" href="<?php echo INCLUDE_PATH?>sobre">Sobre</a></li>
+					<li><a title="servicos" href="<?php echo INCLUDE_PATH?>servicos">Serviços</a></li>
+					<li><a title="noticias" href="<?php echo INCLUDE_PATH?>noticias">Noticias</a></li>
+					<li><a title="contato" realtime="contato" href="<?php echo INCLUDE_PATH?>contato">Contato</a></li>
 				</ul>
 			</nav>
 			<nav class="menu-mobile">
@@ -116,6 +117,7 @@
 					<li><a href="<?php echo INCLUDE_PATH?>">Home</a></li>
 					<li><a href="<?php echo INCLUDE_PATH?>sobre">Sobre</a></li>
 					<li><a href="<?php echo INCLUDE_PATH?>servicos">Serviços</a></li>
+					<li><a href="<?php echo INCLUDE_PATH?>noticias">Noticias</a></li>
 					<li><a realtime="contato" href="<?php echo INCLUDE_PATH?>contato">Contato</a></li>
 				</ul>
 			</nav>
@@ -130,8 +132,14 @@
 		include('pages/'.$url.'.php');
 	}else{
 		if($url != 'sobre' && $url != 'servicos'){
-		$pagina404 = true;
+		$parNoti = explode('/', $url)[0];
+		if($parNoti != 'noticias'){
+			$pagina404 = true;
 		include('pages/erro404.php');
+	}else{
+		include('pages/noticias.php');
+	}
+		
 		}else{
 			include('pages/home.php');
 		}
@@ -153,7 +161,18 @@
 	<script type="text/javascript" src="<?php echo INCLUDE_PATH?>assets/js/slide.js"></script>
 	<script type="text/javascript" src="<?php echo INCLUDE_PATH?>assets/js/constant.js"></script>
 	<script type="text/javascript" src="<?php echo INCLUDE_PATH?>assets/js/formulario.js"></script>
-	
+
+	<?php
+		if(is_array($url) && strstr($url[0], 'noticias') !== false){ 
+	?>
+	<script type="text/javascript">
+		$('select').change(function(){
+			location.href=include_path+'noticias/'+$(this).val();
+		})
+
+	</script>
+	<?php }?>
+
 	<script src='https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyAbJVjJyMqXMTDAOHPD_KY6cC8ttSKEbpA'></script>
 	<!--<script src="http://maps.google.com/maps/api/js?key=YOUR_API_KEY"></script>-->
 	<script type="text/javascript" src="<?php echo INCLUDE_PATH?>assets/js/map.js"></script>
